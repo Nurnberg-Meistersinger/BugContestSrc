@@ -34,7 +34,7 @@ contract DealContract {
         sellerContract = _sellerContract;
     }
 
-    function makeOffer(uint256 _offer, address _offerContract, bytes memory _offerData) public returns (bool) {
+    function makeOffer(uint256 _offer, address _offerContract, bytes memory _offerData) public payable returns (bool) {
         require(_offer > bestOffer, "There is already a better offer.");
         bestOffer = _offer;
         bestOfferAddress = msg.sender;
